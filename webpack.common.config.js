@@ -13,8 +13,8 @@ const config = {
   },
   resolve: {
     alias: {
-      '@/assets': path.resolve('./assets'),
-      '@/': path.resolve('./src'),
+      '@assets': path.resolve(__dirname, 'assets'),
+      '@app': path.resolve(__dirname, 'src'),
     },
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.css', '.svg'],
     modules: [
