@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "sourceMap": false,
+    "allowJs": false,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "rootDir": "./",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "noResolve": false,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true
+  }
+}
