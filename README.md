@@ -8,6 +8,13 @@ To install all dependencies:
 npm install
 ```
 
+Make a copy of .env.example -> .env
+
+```
+cp .env.example .env
+```
+and set the required env variables
+
 To run app in development mode
 
 ```

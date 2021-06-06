@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const common = require('./webpack.common.config');
 const { merge } = require('webpack-merge');
+const dotenv = require('dotenv');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -16,7 +17,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
+      'process.env': JSON.stringify(dotenv.config().parsed),
     }),
     // Remove all locales from moment to reducte bundle size
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
