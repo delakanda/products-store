@@ -1,4 +1,4 @@
-## Welcome to My React-Webpack starter kit for bootstraping your react projects
+## Pangaea Store App
 
 ### How to setup:
 
