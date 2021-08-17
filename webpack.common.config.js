@@ -1,11 +1,10 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist/js'),
     filename: '[name].[contenthash].bundle.js',
     chunkFilename: '[name].[contenthash].bundle.js',
     path: path.resolve('./dist'),
@@ -13,10 +12,10 @@ const config = {
   },
   resolve: {
     alias: {
-      '@assets': path.resolve(__dirname, 'assets'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
       '@app': path.resolve(__dirname, 'src'),
     },
-    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.css', '.svg'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.css', '.svg', '.png'],
     modules: [
       path.resolve('./src'),
       path.resolve('./node_modules'),
@@ -50,10 +49,10 @@ const config = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        use: [
-          'file?hash=sha512&digest=hex&name=Content/img/flags.[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
-        ],
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
       },
       {
         test: /\.(ts|tsx)$/,
@@ -64,7 +63,7 @@ const config = {
               presets: ['@babel/preset-react', '@babel/preset-env'],
             },
           },
-          {loader: 'ts-loader'},
+          { loader: 'ts-loader' },
         ],
       },
     ],
@@ -75,8 +74,8 @@ const config = {
   ],
   optimization: {
     runtimeChunk: 'single',
-    splitChunks: { chunks: 'all'},
+    splitChunks: { chunks: 'all' },
   },
-};
+}
 
-module.exports = config;
+module.exports = config

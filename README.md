@@ -21,6 +21,8 @@ To run app in development mode
 npm run dev
 ```
 
+Then visit `localhost:4000` (default) from dev server, in your browser
+
 To generate all necessary files for production
 
 ```

@@ -1,10 +1,25 @@
-import React from 'react';
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import Header from '@app/components/Header'
+import { useTheme } from '@app/themes/useTheme'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyles } from '@app/themes/GlobalStyles'
+import Routes from '@app/routes/Routes'
 
-function App() {
+function App () {
+  const { theme, themeLoaded } = useTheme()
   return (
-    <div>
-    </div>
-  );
+    <Router>
+      {themeLoaded &&
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <Header />
+
+          <Routes />
+        </ThemeProvider>
+      }
+    </Router>
+  )
 }
 
-export default App;
+export default App
