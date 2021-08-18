@@ -6,6 +6,7 @@ type BoxProps = {
   marginCombo?: string
   paddingCombo?: string
   maxWidth?: string
+  backgroundColor?: string
 }
 
 const StyledBox = styled.div<BoxProps>`
@@ -13,6 +14,7 @@ const StyledBox = styled.div<BoxProps>`
   margin: ${(props) => props.marginCombo || '0px'};
   padding: ${(props) => props.paddingCombo || '0px'};
   max-width: ${(props) => props.maxWidth || '100%'};
+  background-color: ${(props) => props.backgroundColor || 'inherit'};
 `
 
 function Box ({ children, ...rest }: BoxProps) {

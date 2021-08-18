@@ -23,6 +23,7 @@
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "no-use-before-define": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "camelcase": "off"
   }
 }

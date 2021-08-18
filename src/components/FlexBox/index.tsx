@@ -7,6 +7,7 @@ type FlexBoxProps = {
   alignSelf?: string
   marginCombo?: string
   pushItem?: string
+  justifyContent?: string
 }
 
 const StyledFlexBox = styled.div<FlexBoxProps>`
@@ -14,6 +15,7 @@ const StyledFlexBox = styled.div<FlexBoxProps>`
   flex-direction: ${(props) => props.flexDirection || 'row'};
   align-self: ${(props) => props.alignSelf || 'start'};
   margin: ${(props) => props.marginCombo || '0px'};
+  justify-content: ${(props) => props.justifyContent || '0px'};
   
   ${({ pushItem }) => pushItem && pushItem === 'right' && `
     margin-left: auto;

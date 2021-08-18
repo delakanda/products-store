@@ -4,12 +4,13 @@ import styled from 'styled-components'
 type TextProps = {
   children: React.ReactNode
   lineHeight?: string
+  fontSize?: string
 }
 
 const StyledText = styled.div<TextProps>`
   display: inline-block;
   line-height: ${(props) => props.lineHeight || 'inherit'};
-  font-size: ${({ theme }) => theme.fontSize.sm};
+  font-size: ${({ theme, fontSize }) => fontSize || theme.fontSize.sm};
 `
 
 function Text ({ children, ...rest }: TextProps) {
