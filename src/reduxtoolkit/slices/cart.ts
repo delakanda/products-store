@@ -1,4 +1,3 @@
-import { ProductType } from '@app/types/ProductsType'
 import { createSlice } from '@reduxjs/toolkit'
 
 type CartSliceState = {
@@ -8,7 +7,7 @@ type CartSliceState = {
 
 export type CartItem = {
   quantity: number,
-  product: ProductType
+  productId: number
 }
 
 const initialState: CartSliceState = {
@@ -21,31 +20,31 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const cartItemExists = state.items.find((item) => item.product.id === action?.payload?.product?.id)
+      const cartItemExists = state.items.find((item) => item.productId === action?.payload?.product?.id)
       if (cartItemExists) {
         cartItemExists.quantity++
       } else {
         const newItem: CartItem = {
           quantity: 1,
-          product: action.payload.product
+          productId: action.payload.product.id
         }
         state.items.push(newItem)
       }
       state.showCart = true
     },
     incrementQuantity: (state, action) => {
-      const cartItemExists = state.items.find((item) => item.product.id === action?.payload?.product?.id)
+      const cartItemExists = state.items.find((item) => item.productId === action?.payload?.product?.id)
       if (cartItemExists) {
         cartItemExists.quantity++
       }
     },
     decrementQuantity: (state, action) => {
-      const cartItemExists = state.items.find((item) => item.product.id === action?.payload?.product?.id)
+      const cartItemExists = state.items.find((item) => item.productId === action?.payload?.product?.id)
       if (cartItemExists) {
         if (cartItemExists.quantity > 0) cartItemExists.quantity--
         if (cartItemExists.quantity === 0) {
           state.items =
-            state.items.filter((item) => item.product.id !== action?.payload?.product?.id)
+            state.items.filter((item) => item.productId !== action?.payload?.product?.id)
         }
       }
     },

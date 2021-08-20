@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-const Button = styled.button`
+type ButtonProps = {
+  width?: string
+}
+
+const Button = styled.button<ButtonProps>`
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -10,5 +14,6 @@ const Button = styled.button`
   color: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.padding.md};
   min-width: 180px;
+  width: ${(props) => props.width || 'auto'};
 `
 export default Button

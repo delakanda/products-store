@@ -15,7 +15,6 @@ export const StyledCartItem = styled.div`
   display: flex;
   flex-direction: row;
   background-color: ${({ theme }) => theme.colors.white};
-  width: 100%;
   padding: ${({ theme }) => theme.padding.md};
   margin-top: ${({ theme }) => theme.margin.md};
 `
@@ -45,4 +44,15 @@ export const StyledCloseButton = styled.div`
   cursor: pointer;
   left: ${({ theme }) => theme.padding.md};
   top: ${({ theme }) => theme.padding.md};
+`
+
+export const StyledSubTotalSection = styled.div`
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 150px;
+  margin-left: -${({ theme }) => theme.padding.md};
+  padding: ${({ theme }) => theme.padding.md};
+  box-shadow: ${({ theme }) => theme.boxShadows.extremeBottom};
 `

@@ -1,12 +1,12 @@
 import { gql } from '@apollo/client'
 
 export const ALL_PRODUCTS_QUERY = gql`
-  query GetProducts{
+  query products($currency: Currency){
     products {
       id
       title
       image_url
-      price(currency: USD)
+      price(currency: $currency)
       product_options {
         title
       }

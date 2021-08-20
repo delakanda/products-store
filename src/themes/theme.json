@@ -38,7 +38,8 @@
       "xxl": "128px"
     },
     "boxShadows": {
-      "minimal": "0px 2px 3px -3px grey"
+      "minimal": "0px 2px 3px -3px grey",
+      "extremeBottom": "0 -4px 12px rgb(0 0 0 / 15%)"
     }
   }
 }

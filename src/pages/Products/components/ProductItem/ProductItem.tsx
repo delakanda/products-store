@@ -6,8 +6,9 @@ import Image from '@app/components/Image'
 import Text from '@app/components/Text'
 import { ProductType } from '@app/types/ProductsType'
 import styled, { ThemeContext } from 'styled-components'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '@app/reduxtoolkit/slices/cart'
+import { RootState } from '@app/reduxtoolkit/store'
 
 type ProductItemProps = {
   product: ProductType
@@ -36,6 +37,7 @@ const StyledImage = styled(Image)`
 
 function ProductItem ({ product }: ProductItemProps) {
   const theme = useContext(ThemeContext)
+  const { currency } = useSelector((state: RootState) => state.appSlice)
   const dispatch = useDispatch()
   return (
     <StyledProductWrapper>
@@ -44,7 +46,9 @@ function ProductItem ({ product }: ProductItemProps) {
         <H7>{product.title}</H7>
       </FlexBox>
       <FlexBox alignSelf='center' marginCombo='10px 0px'>
-        <Text fontSize={theme.fontSize.md}>$ {product.price}</Text>
+        <Text fontSize={theme.fontSize.md}>
+          <Text fontWeight='900'>{currency}</Text> {product.price}
+        </Text>
       </FlexBox>
       <FlexBox alignSelf='center' marginCombo='10px 0px'>
         <Button onClick={() => {
