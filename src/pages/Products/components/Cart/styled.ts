@@ -40,3 +40,9 @@ export const StyledCartItemImage = styled.div`
     object-fit: contain;
   }
 `
+export const StyledCloseButton = styled.div`
+  position: absolute;
+  cursor: pointer;
+  left: ${({ theme }) => theme.padding.md};
+  top: ${({ theme }) => theme.padding.md};
+`

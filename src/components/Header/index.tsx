@@ -5,6 +5,9 @@ import Link from '../NavLink'
 import Image from '../Image'
 import LogoAsset from '@assets/logo.png'
 import CartIcon from '../CartIcon'
+import { useSelector } from 'react-redux'
+import { RootState } from '@app/reduxtoolkit/store'
+import { getCartQuantity } from '@app/utls/Cart'
 
 const StyledHeader = styled.div`
   padding: ${({ theme }) => `${theme.margin.sm} ${theme.margin.lg}`};
@@ -18,6 +21,8 @@ const extraLinkProps = {
 }
 
 function Header () {
+  const { items } = useSelector((state: RootState) => state.cartSlice)
+
   return (
     <StyledHeader>
       <Image imgSrc={LogoAsset} />
@@ -36,7 +41,7 @@ function Header () {
         pushItem='right'
       >
         <Link to='#' linkText='Account' lineHeight='25px' paddingCombo='0px 1rem'></Link>
-        <CartIcon />
+        <CartIcon cartTotalQuantity={getCartQuantity(items)} />
       </FlexBox>
     </StyledHeader>
   )

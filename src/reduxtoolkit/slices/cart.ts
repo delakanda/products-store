@@ -1,18 +1,18 @@
 import { ProductType } from '@app/types/ProductsType'
 import { createSlice } from '@reduxjs/toolkit'
 
-type Cart = {
+type CartSliceState = {
   showCart: boolean
   items: CartItem[]
 }
 
-type CartItem = {
+export type CartItem = {
   quantity: number,
   product: ProductType
 }
 
-const initialState: Cart = {
-  showCart: true,
+const initialState: CartSliceState = {
+  showCart: false,
   items: []
 }
 
