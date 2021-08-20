@@ -3,11 +3,13 @@ import styled from 'styled-components'
 
 type BaseHeadingProps = {
   children: React.ReactNode
+  textAlign?: string
 }
 
 const StyledBaseHeading = styled.div<BaseHeadingProps>`
   display: block;
   font-weight: 800;
+  text-align: ${(props) => props.textAlign || 'left'};
   font-size: ${({ theme }) => theme.fontSize.xxl};
 `
 

@@ -8,7 +8,7 @@ import Text from '@app/components/Text'
 import { ALL_PRODUCTS_QUERY } from '@app/graphql/products'
 import { ProductsResponseType } from '@app/types/ProductsType'
 import Loader from '@app/components/Loader'
-import ProductItem from './components/ProductItem'
+import ProductItem from './components/ProductItem/ProductItem'
 
 function Products () {
   // ALL_PRODUCTS_QUERY
@@ -30,8 +30,8 @@ function Products () {
         {loading && <Loader />}
         {!loading &&
           <>
-            {data?.products?.map((product, key) => {
-              return <ProductItem key={key} product={product} />
+            {data?.products?.map((product) => {
+              return <ProductItem key={product.id} product={product} />
             })}
           </>
         }

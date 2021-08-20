@@ -8,7 +8,7 @@ import CartIcon from '../CartIcon'
 
 const StyledHeader = styled.div`
   padding: ${({ theme }) => `${theme.margin.sm} ${theme.margin.lg}`};
-  box-shadow: 0px 2px 3px -3px grey;
+  box-shadow: ${({ theme }) => theme.boxShadows.minimal};
   display: flex;
 `
 

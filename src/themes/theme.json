@@ -7,10 +7,12 @@
       "text": "#222",
       "emphasis": "#e2e6e3",
       "olive": "rgb(75, 85, 72)",
-      "white": "#FFF"
+      "white": "#FFF",
+      "lightGrey": "#f2f2ef"
     },
     "fonts": ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen","Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif"],
     "fontSize": {
+      "xxs": "9px",
       "xs": "12px",
       "sm": "14px",
       "md": "16px",
@@ -34,6 +36,9 @@
       "lg": "32px",
       "xl": "64px",
       "xxl": "128px"
+    },
+    "boxShadows": {
+      "minimal": "0px 2px 3px -3px grey"
     }
   }
 }

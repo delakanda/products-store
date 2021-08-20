@@ -4,9 +4,10 @@ import FlexBox from '@app/components/FlexBox'
 import { H7 } from '@app/components/Heading'
 import Image from '@app/components/Image'
 import Text from '@app/components/Text'
-import { ButtonVariants } from '@app/types/Button'
 import { ProductType } from '@app/types/ProductsType'
 import styled, { ThemeContext } from 'styled-components'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '@app/reduxtoolkit/slices/cart'
 
 type ProductItemProps = {
   product: ProductType
@@ -35,6 +36,7 @@ const StyledImage = styled(Image)`
 
 function ProductItem ({ product }: ProductItemProps) {
   const theme = useContext(ThemeContext)
+  const dispatch = useDispatch()
   return (
     <StyledProductWrapper>
       <StyledImage width='auto' imgSrc={product.image_url} />
@@ -45,7 +47,9 @@ function ProductItem ({ product }: ProductItemProps) {
         <Text fontSize={theme.fontSize.md}>$ {product.price}</Text>
       </FlexBox>
       <FlexBox alignSelf='center' marginCombo='10px 0px'>
-        <Button variant={ButtonVariants.solid}>
+        <Button onClick={() => {
+          dispatch(addToCart({ product }))
+        }}>
           Add to Cart
         </Button>
       </FlexBox>

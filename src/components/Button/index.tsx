@@ -1,13 +1,6 @@
-import { ButtonVariants } from '@app/types/Button'
-import React from 'react'
 import styled from 'styled-components'
 
-type ButtonProps = {
-  children: React.ReactNode
-  variant: ButtonVariants;
-}
-
-const StyledSolidButton = styled.button`
+const Button = styled.button`
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -18,15 +11,4 @@ const StyledSolidButton = styled.button`
   padding: ${({ theme }) => theme.padding.md};
   min-width: 180px;
 `
-
-const Button = ({ children, variant }: ButtonProps) => {
-  let buttonComponent = <></>
-  switch (variant) {
-    case ButtonVariants.solid:
-      buttonComponent = (<StyledSolidButton>{children}</StyledSolidButton>)
-      break
-  }
-  return buttonComponent
-}
-
 export default Button

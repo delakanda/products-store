@@ -3,6 +3,7 @@ export type ProductsResponseType = {
 }
 
 export type ProductType = {
+  id: number
   image_url: string
   title: string
   price: number

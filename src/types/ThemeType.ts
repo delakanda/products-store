@@ -6,6 +6,7 @@ export type ThemeType = {
   padding: ThemeValues;
   margin: ThemeValues;
   fontSize: ThemeValues;
+  boxShadows: ThemeValues;
 }
 
 export type ThemeValues = {

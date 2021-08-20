@@ -6,6 +6,7 @@ import { useTheme } from '@app/themes/useTheme'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '@app/themes/GlobalStyles'
 import Routes from '@app/routes/Routes'
+import Cart from '@app/pages/Products/components/Cart'
 
 const client = new ApolloClient({
   uri: process.env.GRAPHQL_URL,
@@ -23,6 +24,8 @@ function App () {
             <Header />
 
             <Routes />
+
+            <Cart />
           </ThemeProvider>
         </ApolloProvider>
       }
